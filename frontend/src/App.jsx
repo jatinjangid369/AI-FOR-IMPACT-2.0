@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './routes/ProtectedRoute';
 import AppLayout from './layouts/AppLayout';
+import OtpVerification from './pages/auth/OtpVerification';
 
 // Pages
 import Login from './pages/auth/Login';
@@ -26,6 +27,7 @@ const App = () => {
           {/* Public Authentication Pages */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/otp-verification" element={<OtpVerification />} />
 
           {/* Protected Area */}
           <Route element={<ProtectedRoute />}>

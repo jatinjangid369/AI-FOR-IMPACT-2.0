@@ -21,9 +21,15 @@ const Login = () => {
     try {
       await login(email, password);
       navigate('/');
-    } catch (err) {
-      setError(err);
-    } finally {
+      } catch (err) {
+        // If the backend indicates the email is not verified, go to OTP page
+        if (err && err.toString().includes('Email not verified')) {
+          localStorage.setItem('pendingEmail', email);
+          navigate('/otp-verification');
+        } else {
+          setError(err);
+        }
+      } finally {
       setLoading(false);
     }
   };

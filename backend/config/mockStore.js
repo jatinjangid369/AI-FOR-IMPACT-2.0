@@ -6,6 +6,7 @@ const mockUsers = [
     email: 'admin@campus.edu',
     password_hash: '$2a$12$L7o3BvS7qFz2v1KkLg6VeuwYV3R3eD6aI1EaXFz3v3v3v3v3v3v3v', // bcrypt for 'admin123'
     role: 'admin',
+    is_verified: false,
     created_at: new Date().toISOString()
   },
   {
@@ -126,6 +127,8 @@ const mockNotifications = [
   }
 ];
 
+const mockOtpVerifications = [];
+
 module.exports = {
   users: mockUsers,
   complaints: mockComplaints,
@@ -133,5 +136,6 @@ module.exports = {
   lostItems: mockLostItems,
   foundItems: mockFoundItems,
   policies: mockPolicies,
-  notifications: mockNotifications
+  notifications: mockNotifications,
+  otpVerifications: mockOtpVerifications
 };

@@ -22,7 +22,7 @@ const Register = () => {
 
     try {
       await register(name, email, password, role);
-      navigate('/');
+      navigate('/otp-verification');;
     } catch (err) {
       setError(err);
     } finally {
